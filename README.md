@@ -8,39 +8,39 @@
 
 Welcome to the repository of my personal portfolio website. This project showcases my skills, expertise, and projects in the fields of AI, Cybersecurity, and Ethical Hacking.
 
-## 🌟 Features
+## Features
 
 - **Responsive Design**: Looks great on both desktop and mobile devices
 - **Interactive UI**: Smooth animations and transitions for a modern feel
 - **Project Showcase**: Highlighting key projects with brief descriptions
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3 (with custom properties for theming)
 - JavaScript (ES6+)
 - Font Awesome for icons
 
-## 🚀 Quick Start
+## Quick Start
 
 1. Clone this repository
 2. Open \`index.html\` in your browser
 3. Explore and enjoy!
 
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork this project and submit pull requests for any enhancements you make. Issues and feature requests are welcome!
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🙋‍♂️ About Me
+## About Me
 
 I'm TucoT9, a German Developer, AI Specialist, and Cybersecurity Expert with over a decade of experience. Connect with me on [GitHub](https://github.com/T9Tuco) or [Discord](https://discord.com/users/718832241127718915).
 
 ---
 
-Made with ❤️ by TucoT9
+Made with by TucoT9
 
