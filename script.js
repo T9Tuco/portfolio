@@ -89,30 +89,29 @@ document.addEventListener('keydown', (e) => {
 
 async function fetchGitHubStats() {
     try {
-        const data = await response.json();
-        
-        document.getElementById('github-avatar').src = data.avatar_url;
-        document.getElementById('github-name').textContent = data.name || data.login;
-        document.getElementById('github-bio').textContent = data.bio || '';
-        document.getElementById('github-followers').textContent = data.followers;
-        document.getElementById('github-repos').textContent = data.public_repos;
-        
-        const repos = await reposResponse.json();
-        
-        let totalStars = 0;
-        const languages = {};
-        
-        for (const repo of repos) {
-            totalStars += repo.stargazers_count;
-            if (repo.language) {
-                languages[repo.language] = (languages[repo.language] || 0) + 1;
-            }
+        const userResponse = await fetch('https://api.github.com/users/T9Tuco');
+        const reposResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
+
+        if (!userResponse.ok || !reposResponse.ok) {
+            throw new Error('Failed to fetch GitHub data');
         }
-        
+
+        const userData = await userResponse.json();
+        const reposData = await reposResponse.json();
+
+        document.getElementById('github-avatar').src = userData.avatar_url;
+        document.getElementById('github-name').textContent = userData.name || userData.login;
+        document.getElementById('github-bio').textContent = userData.bio || '';
+        document.getElementById('github-followers').textContent = userData.followers;
+        document.getElementById('github-repos').textContent = userData.public_repos;
+
+        let totalStars = 0;
+        reposData.forEach(repo => {
+            totalStars += repo.stargazers_count;
+        });
         document.getElementById('github-stars').textContent = totalStars;
-        
-        await fetchPinnedRepos();
-        
+
+        await fetchPinnedRepos(reposData);
     } catch (error) {
         console.error('GitHub API Error:', error);
     }
@@ -135,18 +134,16 @@ const languageColors = {
     Rust: '#dea584'
 };
 
-async function fetchPinnedRepos() {
+async function fetchPinnedRepos(repos) {
     try {
-        const repos = await response.json();
-        
         const pinnedRepos = repos
             .filter(repo => !repo.fork)
             .sort((a, b) => b.stargazers_count - a.stargazers_count)
             .slice(0, 6);
-        
+
         const container = document.getElementById('pinned-repos');
         container.innerHTML = '';
-        
+
         pinnedRepos.forEach(repo => {
             const langColor = languageColors[repo.language] || '#00ff88';
             const repoCard = document.createElement('div');
