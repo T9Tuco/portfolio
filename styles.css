@@ -33,7 +33,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Header & Navigation */
 header {
     position: fixed;
     top: 0;
@@ -95,7 +94,6 @@ nav {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -152,7 +150,6 @@ nav {
     color: var(--accent);
 }
 
-/* Sections */
 .section {
     padding: 8rem 0;
 }
@@ -165,7 +162,6 @@ nav {
     font-weight: 600;
 }
 
-/* Cards */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,7 +210,125 @@ nav {
     gap: 0.75rem;
 }
 
-/* Social Links */
+
+.opsec-intro {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+}
+
+.opsec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.opsec-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.opsec-card:hover {
+    border-color: #303030;
+}
+
+.opsec-card-image {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.opsec-card-image img {
+    display: block;
+    filter: grayscale(30%);
+    transition: filter var(--transition);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 80px;
+}
+
+.opsec-card:hover .opsec-card-image img {
+    filter: grayscale(0%);
+}
+
+.opsec-tag {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    background: rgba(0,0,0,0.85);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    backdrop-filter: blur(4px);
+}
+
+.opsec-card-body {
+    padding: 1.25rem;
+    flex: 1;
+}
+
+.opsec-card-body h3 {
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.opsec-card-body p {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.opsec-card-body code {
+    font-family: 'Space Mono', monospace;
+    background: #111;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+}
+
+.opsec-footer {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    max-width: 800px;
+    padding: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 2px solid #333;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .opsec-grid {
+        grid-template-columns: 1fr;
+    }
+    .opsec-card-image img {
+        height: 200px !important;
+        width: 100% !important;
+    }
+}
+
 .social-links {
     display: flex;
     gap: 2rem;
@@ -233,7 +347,6 @@ nav {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* Tech Stack */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -271,7 +384,6 @@ nav {
     color: var(--text-dim);
 }
 
-/* Modal */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -352,7 +464,6 @@ nav {
     margin-bottom: 2rem;
 }
 
-/* Skill Bar */
 .skill-level {
     margin-top: 1.5rem;
 }
@@ -384,7 +495,6 @@ nav {
     transition: width 0.8s ease;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -413,7 +523,6 @@ footer {
     color: var(--text-dim);
 }
 
-/* Domain Section */
 .domain-card {
     display: flex;
     align-items: center;
@@ -448,7 +557,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* GitHub Stats */
 .cursor {
     display: none;
 }
@@ -475,8 +583,8 @@ footer {
 }
 
 .github-avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid var(--border);
 }
@@ -617,7 +725,6 @@ footer {
     background: var(--accent);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;

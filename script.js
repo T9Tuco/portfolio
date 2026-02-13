@@ -62,7 +62,6 @@ document.querySelectorAll('.tech-item').forEach(item => {
         
         modal.classList.add('active');
         
-        // Animate skill progress bar
         setTimeout(() => {
             skillProgress.style.width = skill + '%';
         }, 100);
@@ -90,7 +89,6 @@ document.addEventListener('keydown', (e) => {
 
 async function fetchGitHubStats() {
     try {
-        const response = await fetch('https://api.github.com/users/T9Tuco');
         const data = await response.json();
         
         document.getElementById('github-avatar').src = data.avatar_url;
@@ -99,7 +97,6 @@ async function fetchGitHubStats() {
         document.getElementById('github-followers').textContent = data.followers;
         document.getElementById('github-repos').textContent = data.public_repos;
         
-        const reposResponse = await fetch('https://api.github.com/users/T9Tuco/repos?per_page=100');
         const repos = await reposResponse.json();
         
         let totalStars = 0;
@@ -140,7 +137,6 @@ const languageColors = {
 
 async function fetchPinnedRepos() {
     try {
-        const response = await fetch('https://api.github.com/users/T9Tuco/repos?sort=updated&per_page=100');
         const repos = await response.json();
         
         const pinnedRepos = repos
