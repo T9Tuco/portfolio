@@ -46,7 +46,8 @@ const techIcons = {
     lua: 'fas fa-moon',
     archlinux: 'fab fa-linux',
     git: 'fab fa-git-alt',
-    github: 'fab fa-github'
+    github: 'fab fa-github',
+    google: 'fab fa-google'
 };
 
 document.querySelectorAll('.tech-item').forEach(item => {
@@ -89,30 +90,29 @@ document.addEventListener('keydown', (e) => {
 
 async function fetchGitHubStats() {
     try {
-        const data = await response.json();
-        
-        document.getElementById('github-avatar').src = data.avatar_url;
-        document.getElementById('github-name').textContent = data.name || data.login;
-        document.getElementById('github-bio').textContent = data.bio || '';
-        document.getElementById('github-followers').textContent = data.followers;
-        document.getElementById('github-repos').textContent = data.public_repos;
-        
-        const repos = await reposResponse.json();
-        
-        let totalStars = 0;
-        const languages = {};
-        
-        for (const repo of repos) {
-            totalStars += repo.stargazers_count;
-            if (repo.language) {
-                languages[repo.language] = (languages[repo.language] || 0) + 1;
-            }
+        const userResponse = await fetch('https://api.github.com/users/T9Tuco');
+        const reposResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
+
+        if (!userResponse.ok || !reposResponse.ok) {
+            throw new Error('Failed to fetch GitHub data');
         }
-        
+
+        const userData = await userResponse.json();
+        const reposData = await reposResponse.json();
+
+        document.getElementById('github-avatar').src = userData.avatar_url;
+        document.getElementById('github-name').textContent = userData.name || userData.login;
+        document.getElementById('github-bio').textContent = userData.bio || '';
+        document.getElementById('github-followers').textContent = userData.followers;
+        document.getElementById('github-repos').textContent = userData.public_repos;
+
+        let totalStars = 0;
+        reposData.forEach(repo => {
+            totalStars += repo.stargazers_count;
+        });
         document.getElementById('github-stars').textContent = totalStars;
-        
-        await fetchPinnedRepos();
-        
+
+        await fetchPinnedRepos(reposData);
     } catch (error) {
         console.error('GitHub API Error:', error);
     }
@@ -135,18 +135,16 @@ const languageColors = {
     Rust: '#dea584'
 };
 
-async function fetchPinnedRepos() {
+async function fetchPinnedRepos(repos) {
     try {
-        const repos = await response.json();
-        
         const pinnedRepos = repos
             .filter(repo => !repo.fork)
             .sort((a, b) => b.stargazers_count - a.stargazers_count)
             .slice(0, 6);
-        
+
         const container = document.getElementById('pinned-repos');
         container.innerHTML = '';
-        
+
         pinnedRepos.forEach(repo => {
             const langColor = languageColors[repo.language] || '#00ff88';
             const repoCard = document.createElement('div');
@@ -170,7 +168,69 @@ async function fetchPinnedRepos() {
     }
 }
 
+async function fetchPinnedRepos() {
+    try {
+        const userResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
+        const orgResponse = await fetch('https://api.github.com/orgs/CoreHub-lol/repos');
+
+        if (!userResponse.ok || !orgResponse.ok) {
+            console.error(`Failed to fetch repositories: ${userResponse.status} ${userResponse.statusText}, ${orgResponse.status} ${orgResponse.statusText}`);
+            return;
+        }
+
+        const userRepos = await userResponse.json();
+        const orgRepos = await orgResponse.json();
+        const pinnedRepoNames = [
+            "MoneroWEB",
+            "PROT7",
+            "suckless-config",
+            "Digispark-Scripts"
+        ];
+
+        const allRepos = [...userRepos, ...orgRepos];
+        const uniqueRepos = allRepos.filter((repo, index, self) =>
+            index === self.findIndex(r => r.name === repo.name)
+        );
+        const pinnedRepos = uniqueRepos.filter(repo => pinnedRepoNames.includes(repo.name));
+
+        const container = document.getElementById('pinned-repos');
+        if (!container) {
+            console.error('HTML element with ID "pinned-repos" not found.');
+            return;
+        }
+
+        container.innerHTML = '';
+
+        pinnedRepos.forEach(repo => {
+            const repoCard = document.createElement('div');
+            repoCard.className = 'pinned-repo';
+            repoCard.innerHTML = `
+                <div class="pinned-repo-header">
+                    <i class="fas fa-book-bookmark"></i>
+                    <a href="${repo.html_url}" target="_blank" class="pinned-repo-name">${repo.name}</a>
+                </div>
+                <p class="pinned-repo-desc">${repo.description || 'No description available.'}</p>
+                <div class="pinned-repo-stats">
+                    <span><i class="fas fa-star"></i> ${repo.stargazers_count} Stars</span>
+                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count} Forks</span>
+                </div>
+            `;
+            container.appendChild(repoCard);
+        });
+    } catch (error) {
+        console.error('Pinned repos error:', error);
+    }
+}
+
+function updateContributionGraph() {
+    const contributionsGraph = document.querySelector('.contribution-graph');
+    contributionsGraph.src = `https://ghchart.rshah.org/d946ef/T9Tuco?${new Date().getTime()}`;
+    contributionsGraph.alt = `T9Tuco's GitHub Contributions`;
+}
+
 fetchGitHubStats();
+fetchPinnedRepos();
+updateContributionGraph();
 
 function updateTime() {
     const now = new Date();
@@ -186,11 +246,28 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-function updateVisitorCount() {
-    let count = localStorage.getItem('visitorCount') || 0;
-    count = parseInt(count) + 1;
-    localStorage.setItem('visitorCount', count);
-    document.getElementById('visitor-count').textContent = count.toLocaleString();
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+document.querySelectorAll('.opsec-card-image img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
-updateVisitorCount();
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+});
+lightboxClose.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+});

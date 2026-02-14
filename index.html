@@ -3,151 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TucoT9 - Developer, AI Specialist & Cybersecurity Expert">
-    <title>TucoT9</title>
+    <meta name="description" content="hi, i'm tuco. i write code and break things.">
+    <title>tuco</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .opsec-card-image img {
-            display: block !important;
-            width: 100% !important;
-            height: 200px !important;
-            object-fit: cover !important;
-            object-position: center !important;
-            filter: grayscale(30%);
-            transition: filter 0.3s ease, transform 0.3s ease;
-            cursor: zoom-in !important;
-        }
-        .opsec-card:hover .opsec-card-image img {
-            filter: grayscale(0%);
-        }
-        .opsec-card-image--double img {
-            width: 50% !important;
-            height: 200px !important;
-        }
-        .opsec-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 1.5rem !important;
-            margin-bottom: 2.5rem !important;
-        }
-        .opsec-card {
-            background: #0a0a0a !important;
-            border: 1px solid #1a1a1a !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            display: flex !important;
-            flex-direction: column !important;
-            transition: border-color 0.3s ease !important;
-        }
-        .opsec-card:hover {
-            border-color: #303030 !important;
-        }
-        .opsec-card-image {
-            position: relative !important;
-            display: flex !important;
-            overflow: hidden !important;
-            background: #111 !important;
-        }
-        .opsec-tag {
-            position: absolute !important;
-            bottom: 0.6rem !important;
-            left: 0.6rem !important;
-            background: rgba(0,0,0,0.85) !important;
-            border: 1px solid #1a1a1a !important;
-            color: #d946ef !important;
-            font-size: 0.6rem !important;
-            letter-spacing: 0.12em !important;
-            text-transform: uppercase !important;
-            padding: 0.2rem 0.5rem !important;
-            border-radius: 3px !important;
-            pointer-events: none !important;
-        }
-        .opsec-card-body {
-            padding: 1.25rem !important;
-            flex: 1 !important;
-        }
-        .opsec-card-body h3 {
-            color: #fff !important;
-            font-size: 0.85rem !important;
-            font-weight: 600 !important;
-            margin-bottom: 0.75rem !important;
-        }
-        .opsec-card-body p {
-            color: #71717a !important;
-            font-size: 0.8rem !important;
-            line-height: 1.8 !important;
-        }
-        .opsec-card-body code {
-            font-family: 'Space Mono', monospace;
-            background: #111;
-            border: 1px solid #1a1a1a;
-            color: #d946ef;
-            font-size: 0.7rem;
-            padding: 0.1rem 0.35rem;
-            border-radius: 3px;
-        }
-
-        /* Lightbox */
-        #lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.92);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
-            backdrop-filter: blur(6px);
-        }
-        #lightbox.active {
-            display: flex;
-        }
-        #lightbox img {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 6px;
-            border: 1px solid #2a2a2a;
-            box-shadow: 0 0 60px rgba(0,0,0,0.8);
-        }
-        #lightbox-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            color: #71717a;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.2s ease;
-            background: none;
-            border: none;
-            line-height: 1;
-        }
-        #lightbox-close:hover {
-            color: #fff;
-        }
-
-        @media (max-width: 900px) {
-            .opsec-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">TucoT9</a>
+                <a href="#" class="logo">tuco</a>
                 <div class="nav-links">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#github-stats" class="nav-link">GitHub</a>
-                    <a href="#expertise" class="nav-link">Expertise</a>
-                    <a href="#vision" class="nav-link">Vision</a>
-                    <a href="#opsec" class="nav-link">OpSec</a>
-                    <a href="#tech-stack" class="nav-link">Tech Stack</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#domains" class="nav-link">Domains</a>
+                    <a href="#about" class="nav-link">about</a>
+                    <a href="#github-stats" class="nav-link">github</a>
+                    <a href="#expertise" class="nav-link">interests</a>
+                    <a href="#vision" class="nav-link">thoughts</a>
+                    <a href="#opsec" class="nav-link">setup</a>
+                    <a href="#tech-stack" class="nav-link">tech</a>
+                    <a href="#projects" class="nav-link">projects</a>
+                    <a href="#domains" class="nav-link">domains</a>
                 </div>
             </nav>
         </div>
@@ -157,15 +31,14 @@
         <section class="hero" id="about">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Developer & Cybersecurity Expert</h1>
+                    <h1 class="hero-title">hi, i'm tuco.</h1>
                     <a href="https://t9.rocks" target="_blank" class="t9-badge">
-                        Member of T9 White Hat Hacker Collective
+                        member of the t9 collective
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     <p class="hero-subtitle">
-                        Hi, I'm Tuco! I've been programming since I was 12 years old. Currently, I'm 18 
-                        and part of the T9 White Hat Collective. I'm a developer at Corehub.lol, an open source collective 
-                        for various tools. I'm passionate about open source software and contributing to the community.
+                        i've been messing with computers since i was 12. i'm a developer and occasional pentester who loves open source and opsec. 
+                        besides breaking things (ethically), i work on tools for <strong>corehub</strong> and hang out with the nerds at t9.
                     </p>
                     <div class="social-links">
                         <a href="https://github.com/T9Tuco" target="_blank" class="social-link">
@@ -184,7 +57,7 @@
 
         <section class="section" id="github-stats">
             <div class="container">
-                <h2 class="section-title">GitHub Stats</h2>
+                <h2 class="section-title">github stats</h2>
                 <div class="github-stats-container">
                     <div class="github-profile">
                         <img id="github-avatar" src="" alt="GitHub Avatar" class="github-avatar">
@@ -202,7 +75,7 @@
                         <img src="https://ghchart.rshah.org/d946ef/T9Tuco" alt="GitHub Contributions" class="contribution-graph">
                     </div>
                     <div class="github-pinned">
-                        <h4>Pinned Repositories</h4>
+                        <h4>pinned repositories</h4>
                         <div id="pinned-repos" class="pinned-repos-grid"></div>
                     </div>
                 </div>
@@ -211,19 +84,19 @@
 
         <section class="section" id="expertise">
             <div class="container">
-                <h2 class="section-title">Expertise</h2>
+                <h2 class="section-title">what i do</h2>
                 <div class="cards-grid">
                     <div class="card">
-                        <h3>Artificial Intelligence</h3>
-                        <p>I'm deeply into AI and Neural Networks. It's not just about using APIs; I want to understand how they think. Projects like NexusNG are my playground for NLP and automation.</p>
+                        <h3>ai & ml</h3>
+                        <p>i think ai is pretty cool. i like trying to understand how neural networks work and building small automation tools with them.</p>
                     </div>
                     <div class="card">
-                        <h3>Cybersecurity</h3>
-                        <p>Understanding how systems break is the only way to secure them. I don't just patch vulnerabilities; I hunt for them. Network security is a puzzle I love solving.</p>
+                        <h3>security</h3>
+                        <p>breaking things is fun. i enjoy learning about network security and figuring out how systems can be exploited (and fixed).</p>
                     </div>
                     <div class="card">
-                        <h3>Ethical Hacking</h3>
-                        <p>White Hat all the way. I participate in CTFs and audit code because I enjoy the challenge. It's about knowledge, responsibility, and keeping the open web safe.</p>
+                        <h3>ctf & hacking</h3>
+                        <p>i play ctf challenges sometimes to keep my brain sharp. it's a good way to learn new tricks and understand code better.</p>
                     </div>
                 </div>
             </div>
@@ -231,23 +104,23 @@
 
         <section class="section" id="vision">
             <div class="container">
-                <h2 class="section-title">My Vision</h2>
+                <h2 class="section-title">philosophy</h2>
                 <div class="cards-grid">
                     <div class="card">
-                        <h3><i class="fab fa-linux" style="color: var(--accent); margin-right: 0.5rem;"></i> Linux & Anonymity</h3>
-                        <p>Linux is the epitome of security and privacy. In a digital age where data is the new currency, using an open-source operating system ensures that your data remains yours. It is secure by design, transparent in its operation, and free from the tracking often found in proprietary systems.</p>
+                        <h3><i class="fab fa-linux" style="color: var(--accent); margin-right: 0.5rem;"></i> linux</h3>
+                        <p>i use linux because i like knowing what my computer is doing. it's great for privacy and just feels better to use than the alternatives.</p>
                     </div>
                     <div class="card">
-                        <h3><i class="fas fa-hand-holding-dollar" style="color: var(--accent); margin-right: 0.5rem;"></i> Economic Freedom</h3>
-                        <p>Imagine the global savings if corporations moved away from expensive Microsoft licensing. Billions could be saved annually by switching to Linux. These resources could be redirected towards innovation, better wages, and sustainable development, breaking the cycle of paying for restrictive software.</p>
+                        <h3><i class="fas fa-hand-holding-dollar" style="color: var(--accent); margin-right: 0.5rem;"></i> free software</h3>
+                        <p>why pay for software that spies on you? open source alternatives are usually better, free, and respect your privacy.</p>
                     </div>
                     <div class="card">
-                        <h3><i class="fas fa-code-branch" style="color: var(--accent); margin-right: 0.5rem;"></i> True Independence</h3>
-                        <p>Open source means freedom from vendor lock-in. We are not just consumers; we are contributors. The ability to audit code, fix bugs, and commit changes to the kernel empowers the community. It creates a technology ecosystem that is resilient, independent, and owned by the people.</p>
+                        <h3><i class="fas fa-code-branch" style="color: var(--accent); margin-right: 0.5rem;"></i> independence</h3>
+                        <p>relying on big tech for everything isn't great. i prefer self-hosting my tools and owning my data whenever possible.</p>
                     </div>
                     <div class="card">
-                        <h3><i class="fas fa-rocket" style="color: var(--accent); margin-right: 0.5rem;"></i> The Future is Open</h3>
-                        <p>Proprietary software is becoming obsolete. The future of technology—from cloud computing to artificial intelligence—is built on open source. It fosters rapid innovation through collaboration rather than competition. Embracing Linux is embracing the future of digital evolution.</p>
+                        <h3><i class="fas fa-rocket" style="color: var(--accent); margin-right: 0.5rem;"></i> collaboration</h3>
+                        <p>working together on open source projects is the best way to innovate. collaboration > competition.</p>
                     </div>
                 </div>
             </div>
@@ -255,31 +128,35 @@
 
         <section class="section" id="opsec">
             <div class="container">
-                <h2 class="section-title">OpSec: My Path to Anonymity</h2>
+                <h2 class="section-title">my setup</h2>
 
-                <p class="opsec-intro">True anonymity online is not a product you can buy — it's a practice. My setup is an attempt to get as close as possible to leaving no trace: no hardware backdoors, no software tracking, no persistent identity. But the strongest system breaks the moment the user makes a mistake. A name, a writing style, a familiar pattern — any of it can unravel everything. The goal is not to hide. The goal is to never exist in the first place.</p>
+                <p class="opsec-intro">
+                    privacy isn't something you buy, it's a habit. i've spent a lot of time tweaking my hardware and software to be as quiet as possible. it's a mix of curiosity and paranoia, but here is the gear i use when i want to disappear.
+                    <br><br>
+                    <strong>main setup:</strong> for my daily driver, i run <strong>arch linux</strong> with <strong>dwm</strong> (suckless). i use <strong>mullvad vpn</strong> for privacy and <strong>vscodium</strong> (the open source version of vscode) for coding.
+                </p>
 
                 <div class="opsec-grid">
 
                     <div class="opsec-card">
                         <div class="opsec-card-image">
                             <img src="3.png" alt="Hardened ThinkPad T480">
-                            <span class="opsec-tag">Hardware</span>
+                            <span class="opsec-tag">hardware</span>
                         </div>
                         <div class="opsec-card-body">
-                            <h3>ThinkPad T480 — Stripped & Hardened</h3>
-                            <p>Purchased with cash at a flea market — no paper trail, no serial number tied to an identity. The camera, microphone, Bluetooth module, and internal Wi-Fi card were physically cut and removed. The keyboard was replaced to eliminate any risk of pre-installed hardware keyloggers. The Intel Management Engine (ME) was neutralized using Libreboot with <code>me_cleaner</code> and the <code>deguard</code> exploit, which abuses a known vulnerability in MEv11 to disable Intel Boot Guard — the mechanism that prevents replacing proprietary firmware. From that point on, even Intel has no access.</p>
+                            <h3>thinkpad t480</h3>
+                            <p>this is my main workhorse for security stuff. i've physically removed the camera and microphone (can't hack what isn't there) and neutralized the intel management engine with <code>me_cleaner</code>. it's stripped down to the bare essentials.</p>
                         </div>
                     </div>
 
                     <div class="opsec-card">
                         <div class="opsec-card-image">
                             <img src="4.png" alt="GL.iNet Beryl Router">
-                            <span class="opsec-tag">Network</span>
+                            <span class="opsec-tag">network</span>
                         </div>
                         <div class="opsec-card-body">
-                            <h3>GL.iNet Beryl — Isolated VPN Router</h3>
-                            <p>The T480 has never touched my home network — not once. All traffic routes exclusively through a dedicated GL.iNet Beryl router running Mullvad VPN at the firmware level. The external Wi-Fi card was disassembled and verified with Wireshark to ensure it wasn't silently forwarding traffic. This creates a hard network boundary: the machine is completely isolated from all personal devices and home infrastructure.</p>
+                            <h3>gl.inet beryl</h3>
+                            <p>i isolate my testing device from my home network using this travel router. it forces all traffic through a vpn at the hardware level, so even if the laptop tries to leak something, the router catches it.</p>
                         </div>
                     </div>
 
@@ -287,64 +164,66 @@
                         <div class="opsec-card-image opsec-card-image--double">
                             <img src="1.png" alt="T480 booting TailsOS">
                             <img src="2.png" alt="TailsOS Login Screen">
-                            <span class="opsec-tag">System</span>
+                            <span class="opsec-tag">system</span>
                         </div>
                         <div class="opsec-card-body">
-                            <h3>Tails OS — Amnesiac by Design</h3>
-                            <p>The internal SSD is removed entirely. The machine boots exclusively from a USB stick running Tails — one of the most anonymity-focused operating systems available. Tails routes all traffic through Tor by default and leaves zero persistent state. Every reboot is a clean slate: no logs, no history, no identity. There is nothing to forensically recover. The system cannot betray what it was never allowed to remember.</p>
+                            <h3>tails os</h3>
+                            <p>when i need a completely clean slate, i boot tails from a usb. it routes everything through tor and forgets everything the moment i shut it down. no logs, no history, no trace.</p>
                         </div>
                     </div>
 
                 </div>
-
-                <p class="opsec-footer">All of this means nothing if the person behind the screen slips. A username reused, a writing style recognized, a timezone exposed in a timestamp — the hardware won't save you. Anonymity is a discipline, not a configuration.</p>
 
             </div>
         </section>
 
         <section class="section" id="tech-stack">
             <div class="container">
-                <h2 class="section-title">Tech Stack</h2>
+                <h2 class="section-title">tech stack</h2>
                 <div class="tech-stack">
-                    <div class="tech-item" data-tech="javascript" data-skill="85" data-description="A versatile programming language that I'm very proficient with. I can read, write, and understand JavaScript code perfectly, making it one of my strongest skills.">
+                    <div class="tech-item" data-tech="javascript" data-skill="85" data-description="it's messy but it works. i can write it without checking stackoverflow every 5 seconds (mostly).">
                         <i class="fab fa-js tech-icon"></i>
                         <span class="tech-name">JavaScript</span>
                     </div>
-                    <div class="tech-item" data-tech="react" data-skill="70" data-description="I'm comfortable with React and can build functional applications. I understand all the basics and can read and write React code effectively.">
+                    <div class="tech-item" data-tech="react" data-skill="70" data-description="making divs move. i understand hooks enough to make things work, but don't ask me about useEffect dependencies.">
                         <i class="fab fa-react tech-icon"></i>
                         <span class="tech-name">React</span>
                     </div>
-                    <div class="tech-item" data-tech="python" data-skill="90" data-description="Python is my strongest language. I find it intuitive and can write clean, efficient code. I use it for a variety of applications from automation to data analysis.">
+                    <div class="tech-item" data-tech="python" data-skill="90" data-description="executable pseudocode. my favorite tool for scripting and automation because i'm lazy.">
                         <i class="fab fa-python tech-icon"></i>
                         <span class="tech-name">Python</span>
                     </div>
-                    <div class="tech-item" data-tech="php" data-skill="80" data-description="I'm very experienced with PHP and can build robust backends. While I haven't worked with it recently, my knowledge is still strong.">
+                    <div class="tech-item" data-tech="php" data-skill="80" data-description="the unkillable beast. i know it well enough to build backends, even if people make fun of it.">
                         <i class="fab fa-php tech-icon"></i>
                         <span class="tech-name">PHP</span>
                     </div>
-                    <div class="tech-item" data-tech="csharp" data-skill="24" data-description="I understand the basics of C# but haven't explored it deeply yet. I can read simple code and understand the core concepts.">
+                    <div class="tech-item" data-tech="csharp" data-skill="24" data-description="microsoft java. i know the basics, enough to read it and nod pretending i understand.">
                         <i class="fab fa-microsoft tech-icon"></i>
                         <span class="tech-name">C#</span>
                     </div>
-                    <div class="tech-item" data-tech="cpp" data-skill="40" data-description="I have intermediate knowledge of C++ and can work with it for specific applications. Still expanding my expertise in this language.">
+                    <div class="tech-item" data-tech="cpp" data-skill="40" data-description="manual memory management is fun until it isn't. i use it when speed matters or when i want to feel smart.">
                         <i class="fas fa-code tech-icon"></i>
                         <span class="tech-name">C++</span>
                     </div>
-                    <div class="tech-item" data-tech="lua" data-skill="60" data-description="I've used Lua for game development and scripting. Comfortable with the language but still learning some advanced concepts.">
+                    <div class="tech-item" data-tech="lua" data-skill="60" data-description="arrays start at 1 here. it's weird but great for game mods. simple and fast.">
                         <i class="fas fa-moon tech-icon"></i>
                         <span class="tech-name">Lua</span>
                     </div>
-                    <div class="tech-item" data-tech="archlinux" data-skill="30" data-description="I'm a beginner with Arch Linux but absolutely love it. Still learning the ins and outs of this powerful distribution.">
+                    <div class="tech-item" data-tech="archlinux" data-skill="30" data-description="i use arch btw. breaking my system with an update is my favorite hobby.">
                         <i class="fab fa-linux tech-icon"></i>
                         <span class="tech-name">Arch Linux</span>
                     </div>
-                    <div class="tech-item" data-tech="git" data-skill="75" data-description="I have standard knowledge of Git and can use it effectively for version control. Comfortable with all common operations.">
+                    <div class="tech-item" data-tech="git" data-skill="75" data-description="ctrl+z for files. i know the basics, but `git rebase` still scares me.">
                         <i class="fab fa-git-alt tech-icon"></i>
                         <span class="tech-name">Git</span>
                     </div>
-                    <div class="tech-item" data-tech="github" data-skill="75" data-description="I'm very comfortable using GitHub for collaboration and project management. Familiar with issues, pull requests, and other GitHub features.">
+                    <div class="tech-item" data-tech="github" data-skill="75" data-description="my code graveyard. full of 'initial commit' and 'fix bug' messages.">
                         <i class="fab fa-github tech-icon"></i>
                         <span class="tech-name">GitHub</span>
+                    </div>
+                    <div class="tech-item" data-tech="google" data-skill="100" data-description="professional googler. i can find the answer to any error message in under 30 seconds. it's basically 90% of my job.">
+                        <i class="fab fa-google tech-icon"></i>
+                        <span class="tech-name">Googling</span>
                     </div>
                 </div>
             </div>
@@ -352,41 +231,34 @@
 
         <section class="section" id="projects">
             <div class="container">
-                <h2 class="section-title">Projects</h2>
+                <h2 class="section-title">projects</h2>
                 <div class="cards-grid">
                     <div class="card">
-                        <h3>CoreHub</h3>
-                        <p>An open-source base service that provides access to various open source projects. A centralized platform for developers to discover, contribute to, and utilize open source tools and libraries.</p>
+                        <h3>corehub</h3>
+                        <p>an open-source collective for various tools. it's a place where we dump our cool projects.</p>
                         <a href="https://corehub.lol" class="card-link" target="_blank">
-                            View Project <i class="fas fa-arrow-right"></i>
+                            view project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="card">
-                        <h3>NexusBD</h3>
-                        <p>A comprehensive bot dashboard that allows you to easily manage your Discord bot, monitor which servers it's on, and communicate with users through direct messages.</p>
+                        <h3>nexusbd</h3>
+                        <p>a dashboard for managing discord bots. makes it easier to see what's going on with your bot.</p>
                         <a href="https://github.com/T9Tuco/NexusBD" class="card-link" target="_blank">
-                            View on GitHub <i class="fab fa-github"></i>
+                            view on github <i class="fab fa-github"></i>
                         </a>
                     </div>
                     <div class="card">
-                        <h3>NexusNG</h3>
-                        <p>An advanced AI assistant that revolutionizes daily tasks through natural language processing and machine learning. (nexusng.de and nexusng.site are expired)</p>
+                        <h3>nexusng</h3>
+                        <p>an ai assistant project i worked on. mostly experimenting with nlp and ml.</p>
                         <a href="https://github.com/T9Tuco/NexusNG" class="card-link" target="_blank">
-                            View on GitHub <i class="fab fa-github"></i>
+                            view on github <i class="fab fa-github"></i>
                         </a>
                     </div>
                     <div class="card">
-                        <h3>SpoofMail</h3>
-                        <p>A specialized tool for security professionals to test and improve email security systems through comprehensive analysis.</p>
-                        <a href="https://spoofmail.tucot9.com" class="card-link" target="_blank">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <h3>SecureScript</h3>
-                        <p>Advanced security testing platform for Roblox developers to enhance and validate their anti-cheat systems.</p>
-                        <a href="https://cheat.tucot9.com" class="card-link" target="_blank">
-                            View Project <i class="fas fa-arrow-right"></i>
+                        <h3>signalvoid</h3>
+                        <p>working on hardware for security pros. the 'surge' is a portable device for analyzing wireless systems (rp2040, esp32, sub-ghz, nfc). still a work in progress.</p>
+                        <a href="https://signalvoid.org" class="card-link" target="_blank">
+                            view project <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -395,7 +267,7 @@
 
         <section class="section" id="domains">
             <div class="container">
-                <h2 class="section-title">My Domains</h2>
+                <h2 class="section-title">my domains</h2>
                 <div class="cards-grid">
                     <div class="card">
                         <div class="domain-card">
@@ -403,15 +275,14 @@
                                 <i class="fas fa-globe-americas"></i>
                             </div>
                             <div class="domain-info">
-                                <h3 class="domain-name">t9.rocks</h3>
+                                <h3 class="domain-name">t9.rocks (student pack)</h3>
                                 <p class="domain-description">
-                                    I own this domain thanks to my GitHub Student account, which provides free domains. 
-                                    I claimed it for T9 projects.
+                                    got this via the student pack. i lend it to the t9 crew. they trust me with their dns, which is brave.
                                 </p>
                             </div>
                         </div>
                         <a href="https://t9.rocks" class="card-link" target="_blank">
-                            Visit Site <i class="fas fa-arrow-right"></i>
+                            visit site <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     
@@ -421,14 +292,14 @@
                                 <i class="fas fa-globe-americas"></i>
                             </div>
                             <div class="domain-info">
-                                <h3 class="domain-name">t9.software</h3>
+                                <h3 class="domain-name">t9.software (student pack)</h3>
                                 <p class="domain-description">
-                                    Another domain for T9 projects, focusing on our software development initiatives.
+                                    also a student pack domain i lend to t9. honestly surprised they trust me not to redirect everything to a rickroll.
                                 </p>
                             </div>
                         </div>
                         <a href="https://t9.software" class="card-link" target="_blank">
-                            Visit Site <i class="fas fa-arrow-right"></i>
+                            visit site <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     
@@ -440,12 +311,12 @@
                             <div class="domain-info">
                                 <h3 class="domain-name">tucot9.com</h3>
                                 <p class="domain-description">
-                                    My personal portfolio website (the one you're currently viewing).
+                                    you are here. obviously. unless you're reading the source code.
                                 </p>
                             </div>
                         </div>
                         <a href="https://tucot9.com" class="card-link" target="_blank">
-                            Visit Site <i class="fas fa-arrow-right"></i>
+                            visit site <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     
@@ -457,13 +328,12 @@
                             <div class="domain-info">
                                 <h3 class="domain-name">corehub.lol</h3>
                                 <p class="domain-description">
-                                    I purchased this domain for my Corehub project, which I develop with my friends. 
-                                    It's an open source collective for various tools.
+                                    the .lol TLD was cheap and we thought it was funny. it hosts our serious projects.
                                 </p>
                             </div>
                         </div>
                         <a href="https://corehub.lol" class="card-link" target="_blank">
-                            Visit Site <i class="fas fa-arrow-right"></i>
+                            visit site <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                     
@@ -475,8 +345,7 @@
                             <div class="domain-info">
                                 <h3 class="domain-name">nexusng.site (expired)</h3>
                                 <p class="domain-description">
-                                    This domain belongs to my friend "ghost", who also owns nexusng.de. 
-                                    We both have domains for our AI projects.
+                                    expired because i'm broke. please don't steal it, wait until my pockets are full again. have mercy.
                                 </p>
                             </div>
                         </div>
@@ -489,11 +358,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 TucoT9. All rights reserved.</p>
-                <div class="visitor-counter">
-                    <i class="fas fa-eye"></i>
-                    <span id="visitor-count">0</span> visitors
-                </div>
+                <p>&copy; 2026 TucoT9. made with 💻, ☕ and a lot of <a href="https://stackoverflow.com" target="_blank" style="color: var(--text-dim); text-decoration: none;">ctrl+c</a>.</p>
                 <div class="current-time">
                     <i class="fas fa-clock"></i>
                     <span id="current-time"></span>
@@ -524,39 +389,12 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
     <div id="lightbox">
         <button id="lightbox-close">&times;</button>
         <img id="lightbox-img" src="" alt="">
     </div>
 
     <script src="script.js"></script>
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxClose = document.getElementById('lightbox-close');
-
-        document.querySelectorAll('.opsec-card-image img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        lightboxClose.addEventListener('click', closeLightbox);
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Transparent_Cartoon_Running_Cat.gif" alt="running cat" class="running-cat">
 </body>
 </html>
