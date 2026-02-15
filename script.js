@@ -111,8 +111,6 @@ async function fetchGitHubStats() {
             totalStars += repo.stargazers_count;
         });
         document.getElementById('github-stars').textContent = totalStars;
-
-        await fetchPinnedRepos(reposData);
     } catch (error) {
         console.error('GitHub API Error:', error);
     }
@@ -134,39 +132,6 @@ const languageColors = {
     Go: '#00ADD8',
     Rust: '#dea584'
 };
-
-async function fetchPinnedRepos(repos) {
-    try {
-        const pinnedRepos = repos
-            .filter(repo => !repo.fork)
-            .sort((a, b) => b.stargazers_count - a.stargazers_count)
-            .slice(0, 6);
-
-        const container = document.getElementById('pinned-repos');
-        container.innerHTML = '';
-
-        pinnedRepos.forEach(repo => {
-            const langColor = languageColors[repo.language] || '#00ff88';
-            const repoCard = document.createElement('div');
-            repoCard.className = 'pinned-repo';
-            repoCard.innerHTML = `
-                <div class="pinned-repo-header">
-                    <i class="fas fa-book-bookmark"></i>
-                    <a href="${repo.html_url}" target="_blank" class="pinned-repo-name">${repo.name}</a>
-                </div>
-                <p class="pinned-repo-desc">${repo.description || 'No description'}</p>
-                <div class="pinned-repo-stats">
-                    ${repo.language ? `<span class="repo-language"><span class="language-dot" style="background: ${langColor}"></span>${repo.language}</span>` : ''}
-                    <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
-                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-                </div>
-            `;
-            container.appendChild(repoCard);
-        });
-    } catch (error) {
-        console.error('Pinned repos error:', error);
-    }
-}
 
 async function fetchPinnedRepos() {
     try {
