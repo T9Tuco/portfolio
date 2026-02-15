@@ -38,10 +38,3 @@ sure, why not? if you find a bug or have a suggestion, feel free to open an issu
 
 it's MIT. do whatever you want with it, i don't care. just don't sue me.
 
-## about me
-
-i'm a developer, a security enthusiast, and a professional googler. i like breaking things and putting them back together. you can find me on [GitHub](https://github.com/T9Tuco) or bothering people on [Discord](https://discord.com/users/718832241127718915).
-
----
-
-made with 💻, ☕, and a whole lot of stack overflow.
