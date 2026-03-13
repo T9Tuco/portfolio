@@ -134,57 +134,58 @@ const languageColors = {
 };
 
 async function fetchPinnedRepos() {
+    const container = document.getElementById('pinned-repos');
+    if (!container) {
+        console.error('HTML element with ID "pinned-repos" not found.');
+        return;
+    }
+
     try {
-        const userResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
-        const orgResponse = await fetch('https://api.github.com/orgs/CoreHub-lol/repos');
+        const response = await fetch('https://pinned.berrysauce.dev/get/T9Tuco');
 
-        if (!userResponse.ok || !orgResponse.ok) {
-            console.error(`Failed to fetch repositories: ${userResponse.status} ${userResponse.statusText}, ${orgResponse.status} ${orgResponse.statusText}`);
-            return;
+        if (!response.ok) {
+            throw new Error(`API responded with ${response.status}`);
         }
 
-        const userRepos = await userResponse.json();
-        const orgRepos = await orgResponse.json();
-        const pinnedRepoNames = [
-            "MoneroWEB",
-            "PROT7",
-            "suckless-config",
-            "Digispark-Scripts"
-        ];
-
-        const allRepos = [...userRepos, ...orgRepos];
-        const uniqueRepos = allRepos.filter((repo, index, self) =>
-            index === self.findIndex(r => r.name === repo.name)
-        );
-        const pinnedRepos = uniqueRepos.filter(repo => pinnedRepoNames.includes(repo.name));
-
-        const container = document.getElementById('pinned-repos');
-        if (!container) {
-            console.error('HTML element with ID "pinned-repos" not found.');
-            return;
+        const repos = await response.json();
+        if (repos && repos.length > 0) {
+            renderPinnedRepos(repos.map(r => ({
+                name: r.name,
+                description: r.description,
+                html_url: `https://github.com/${r.author}/${r.name}`,
+                stargazers_count: r.stars,
+                forks_count: r.forks,
+                language: r.language || null,
+                languageColor: r.languageColor || null
+            })), container);
         }
-
-        container.innerHTML = '';
-
-        pinnedRepos.forEach(repo => {
-            const repoCard = document.createElement('div');
-            repoCard.className = 'pinned-repo';
-            repoCard.innerHTML = `
-                <div class="pinned-repo-header">
-                    <i class="fas fa-book-bookmark"></i>
-                    <a href="${repo.html_url}" target="_blank" class="pinned-repo-name">${repo.name}</a>
-                </div>
-                <p class="pinned-repo-desc">${repo.description || 'No description available.'}</p>
-                <div class="pinned-repo-stats">
-                    <span><i class="fas fa-star"></i> ${repo.stargazers_count} Stars</span>
-                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count} Forks</span>
-                </div>
-            `;
-            container.appendChild(repoCard);
-        });
     } catch (error) {
         console.error('Pinned repos error:', error);
     }
+}
+
+function renderPinnedRepos(repos, container) {
+    container.innerHTML = '';
+    repos.forEach(repo => {
+        const langDot = repo.language
+            ? `<span class="pinned-repo-lang"><span class="lang-dot" style="background:${repo.languageColor || languageColors[repo.language] || '#ccc'}"></span>${repo.language}</span>`
+            : '';
+        const repoCard = document.createElement('div');
+        repoCard.className = 'pinned-repo';
+        repoCard.innerHTML = `
+            <div class="pinned-repo-header">
+                <i class="fas fa-book-bookmark"></i>
+                <a href="${repo.html_url}" target="_blank" class="pinned-repo-name">${repo.name}</a>
+            </div>
+            <p class="pinned-repo-desc">${repo.description || 'No description available.'}</p>
+            <div class="pinned-repo-stats">
+                ${langDot}
+                <span><i class="fas fa-star"></i> ${repo.stargazers_count} Stars</span>
+                <span><i class="fas fa-code-branch"></i> ${repo.forks_count} Forks</span>
+            </div>
+        `;
+        container.appendChild(repoCard);
+    });
 }
 
 function updateContributionGraph() {

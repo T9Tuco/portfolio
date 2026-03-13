@@ -723,6 +723,20 @@ footer {
     font-size: 0.75rem;
 }
 
+.pinned-repo-lang {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
 .repo-language {
     display: flex;
     align-items: center;
@@ -894,4 +908,3 @@ footer {
         grid-template-columns: 1fr !important;
     }
 }
-
