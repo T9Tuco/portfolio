@@ -5,7 +5,7 @@ if you're here, you're probably one of these:
 - a fellow nerd
 - someone who clicked too far
 - a recruiter trying to figure out if i'm serious (im not)
-- a cat ![cat](https://cataas.com/cat?width=28&height=28)
+- a cat ![cat](https://cataas.com/cat/cute?type=square&width=28&height=28)
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Ftucot9.com)](https://tucot9.com)
 [![GitHub last commit](https://img.shields.io/github/last-commit/T9Tuco/home-page)](https://github.com/T9Tuco/home-page)
@@ -13,7 +13,7 @@ if you're here, you're probably one of these:
 
 ## what is this place?
 
-![cat](https://cataas.com/cat?width=400&height=200)
+![a curious cat](https://cataas.com/cat/curious?width=600&height=220)
 
 it's a retro-ish personal site built with plain html, cats, css, and javascript. i dont even know anymore why i didnt use react
 
@@ -36,9 +36,9 @@ it has:
 
 ## cat situation
 
-important section.
+![zoomies cat](https://cataas.com/cat/zoomies?width=600&height=220)
 
-![cat](https://cataas.com/cat?width=400&height=200)
+important section.
 
 the site now has more than one cat thing going on, which is how it should be. not just one sad cat in the bottom right pretending to carry the whole website alone.
 
@@ -52,7 +52,7 @@ all cat photos come from the internet in real time, which is either fun or a ter
 
 ## tech stack
 
-![cat](https://cataas.com/cat?width=400&height=180)
+![keyboard cat](https://cataas.com/cat/keyboard?width=600&height=220)
 
 - `html` for the bones
 - `css` for the retro window look
@@ -71,19 +71,19 @@ that's it. there is no setup process because i respect your time a little.
 
 ## why it looks like this
 
-![cat](https://cataas.com/cat?width=400&height=200)
+![loaf cat](https://cataas.com/cat/loaf?width=600&height=220)
 
 because i like:
 - dark retro ui
 - terminal-ish stuff
 - cats
 - handmade websites
-- old web energy without making it  (larp)
+- old web energy without making it (larp)
 - cats
 
 ## contributing
 
-![cat](https://cataas.com/cat?width=400&height=180)
+![grumpy cat](https://cataas.com/cat/grumpy?width=600&height=220)
 
 sure. if you find a bug, typo, broken cat, weird layout issue, or some other problem, feel free to open an issue or a pull request.
 
@@ -92,5 +92,7 @@ just don't turn it into linkedin in website form.
 and dont remove any cats!!
 
 ## license
+
+![happy cat](https://cataas.com/cat/happy?width=600&height=220)
 
 mit. do what you want. if you somehow make money from this exact code, honestly fair enough.
