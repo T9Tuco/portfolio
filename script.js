@@ -1,3 +1,4 @@
+// steal this if you want, i dont think u want to steal this
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -90,7 +91,7 @@ document.addEventListener('keydown', (e) => {
 
 async function fetchGitHubStats() {
     try {
-        const userResponse = await fetch('https://api.github.com/users/T9Tuco');
+        const userResponse = await fetch('https://api.github.com/users/T9Tuco'); //pls dont rate limit me github
         const reposResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
 
         if (!userResponse.ok || !reposResponse.ok) {
@@ -115,7 +116,7 @@ async function fetchGitHubStats() {
         console.error('GitHub API Error:', error);
     }
 }
-
+// why is this here
 const languageColors = {
     JavaScript: '#f1e05a',
     Python: '#3572A5',
@@ -188,6 +189,7 @@ function renderPinnedRepos(repos, container) {
     });
 }
 
+//ty claude
 function updateContributionGraph() {
     const contributionsGraph = document.querySelector('.contribution-graph');
     contributionsGraph.src = `https://ghchart.rshah.org/d946ef/T9Tuco?${new Date().getTime()}`;
