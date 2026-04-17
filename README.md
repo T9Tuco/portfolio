@@ -6,7 +6,7 @@ if you're here, you're probably one of these:
 
 - a fellow nerd
 - someone who clicked too far
-- a recruiter trying to figure out if i'm serious
+- a recruiter trying to figure out if i'm serious (im not)
 - a cat
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Ftucot9.com)](https://tucot9.com)
@@ -15,23 +15,23 @@ if you're here, you're probably one of these:
 
 ## what is this place?
 
-it's a retro-ish personal site built with plain html, css, and javascript. no framework, no build step, no npm ritual, no 40 dependencies to render one paragraph. just files.
+it's a retro-ish personal site built with plain html, cats, css, and javascript. i dont even know anymore why i didnt use react
 
 it has:
 
 - a hero section with my intro and links
 - github stats and pinned repos
 - cards about what i do and what i believe in
-- a setup section because i like talking about computers too much
+- a setup section because i like talking about computers (and cats) too much
 - projects, domains, and other internet debris
 - real cats, because the internet is still for cats
 
 ## things this website can do
 
-- show my github profile, repo stats, and pinned projects
+- show my bad github profile, repo stats, and pinned projects
 - open little tech stack popups when you click on the icons
-- show opsec/setup pictures in a lightbox
-- update the local time in the footer
+- show opsec/setup pictures in a lightbox (my larp area)
+- update the local time in the footer 
 - spawn a real cat photo widget in the bottom right
 - load more real cat photos into the page in retro polaroid-ish frames
 - leave paw prints behind your cursor, because apparently that became necessary
@@ -75,8 +75,9 @@ because i like:
 
 - dark retro ui
 - terminal-ish stuff
-- hand-made websites
-- old web energy without making it unreadable
+- cats
+- handmade websites
+- old web energy without making it  (larp)
 - cats
 
 ## contributing
@@ -84,6 +85,8 @@ because i like:
 sure. if you find a bug, typo, broken cat, weird layout issue, or some other problem, feel free to open an issue or a pull request.
 
 just don't turn it into linkedin in website form.
+
+and dont remove any cats!!
 
 ## license
 
