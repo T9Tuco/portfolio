@@ -752,6 +752,22 @@ footer {
 }
 #lightbox-close:hover { color: var(--pink); }
 
+/* ─── SCROLL REVEAL ─── */
+.will-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    transition-delay: var(--stagger, 0ms);
+}
+.will-reveal.revealed {
+    opacity: 1;
+    transform: none;
+}
+.section > .container.will-reveal {
+    transform: translateY(24px);
+    transition-duration: 0.45s;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
     .opsec-grid { grid-template-columns: 1fr !important; }

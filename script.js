@@ -14,20 +14,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.classList.add('revealed');
+        const onEnd = (e) => {
+            if (e.propertyName === 'opacity') {
+                el.classList.remove('will-reveal', 'revealed');
+                el.removeEventListener('transitionend', onEnd);
+            }
+        };
+        el.addEventListener('transitionend', onEnd);
+        revealObserver.unobserve(el);
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.card, .tech-item').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    observer.observe(element);
+function staggerReveal(elements) {
+    Array.from(elements).forEach((el, i) => {
+        el.classList.add('will-reveal');
+        el.style.setProperty('--stagger', `${i * 60}ms`);
+        revealObserver.observe(el);
+    });
+}
+
+document.querySelectorAll('.section > .container').forEach(el => {
+    el.classList.add('will-reveal');
+    el.style.setProperty('--stagger', '0ms');
+    revealObserver.observe(el);
 });
+
+document.querySelectorAll('.cards-grid').forEach(grid =>
+    staggerReveal(grid.querySelectorAll('.card'))
+);
+staggerReveal(document.querySelectorAll('.tech-item'));
+staggerReveal(document.querySelectorAll('.opsec-card'));
+staggerReveal(document.querySelectorAll('.github-profile, .github-contributions, .github-pinned'));
+staggerReveal(document.querySelectorAll('.opsec-intro'));
 
 const modal = document.getElementById('techModal');
 const modalIcon = modal.querySelector('.modal-icon');
@@ -167,12 +190,14 @@ async function fetchPinnedRepos() {
 
 function renderPinnedRepos(repos, container) {
     container.innerHTML = '';
-    repos.forEach(repo => {
+    repos.forEach((repo, index) => {
         const langDot = repo.language
             ? `<span class="pinned-repo-lang"><span class="lang-dot" style="background:${repo.languageColor || languageColors[repo.language] || '#ccc'}"></span>${repo.language}</span>`
             : '';
         const repoCard = document.createElement('div');
-        repoCard.className = 'pinned-repo';
+        repoCard.className = 'pinned-repo will-reveal';
+        repoCard.style.setProperty('--stagger', `${index * 60}ms`);
+        revealObserver.observe(repoCard);
         repoCard.innerHTML = `
             <div class="pinned-repo-header">
                 <i class="fas fa-book-bookmark"></i>
