@@ -2,11 +2,8 @@
 
 (function cats() {
   const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const CAT_TAGS = ["cute", "kitten", "fluffy", "loaf", "blep", "sleepy"];
 
-  function pick(list) {
-    return list[Math.floor(Math.random() * list.length)];
-  }
+  function cbust() { return `_t=${Date.now()}-${Math.floor(Math.random()*1e9)}`; }
 
   function buildWidget() {
     const style = document.createElement("style");
@@ -282,32 +279,28 @@
     const status = widget.querySelector("#cat-widget-status");
     const minButton = widget.querySelector("#cat-min");
 
-    const captions = {
-      cute: "small criminal",
-      kitten: "junior internet resident",
-      fluffy: "high-volume fur deployment",
-      loaf: "perfect loaf formation",
-      blep: "blep evidence secured",
-      sleepy: "sleep mode but louder",
-    };
+    const catCaptions = [
+      "small criminal", "professional loaf", "blep evidence secured",
+      "high-volume fur deployment", "sleepy mode activated", "junior internet resident",
+      "cozy chaos agent", "definitely plotting something", "void starer",
+    ];
 
     function loadCat() {
-      const tag = pick(CAT_TAGS);
       loading.style.display = "flex";
       img.style.display = "none";
       caption.textContent = "loading cat...";
       status.textContent = "requesting a new real cat from cataas";
 
-      img.src = `https://cataas.com/cat/${tag}?width=240&height=180&t=${Date.now()}`;
+      img.src = `https://cataas.com/cat?width=240&height=180&${cbust()}`;
       img.onload = () => {
         loading.style.display = "none";
         img.style.display = "block";
-        caption.textContent = captions[tag] || "cat acquired";
+        caption.textContent = catCaptions[Math.floor(Math.random() * catCaptions.length)];
         status.textContent = "pulled from the internet because obviously.";
       };
       img.onerror = () => {
         loading.textContent = "😿";
-        caption.textContent = "cat escaped";  // damn im creative
+        caption.textContent = "cat escaped";
         status.textContent = "try again in a second";
       };
     }
@@ -364,24 +357,25 @@
     });
   }
 
-  function createCatPhotoCard(tag, caption, rotate) {
+  function createCatPhotoCard(caption, rotate) {
     const card = document.createElement("figure");
     card.className = "cat-photo-card";
     card.style.setProperty("--cat-rotate", `${rotate}deg`);
     card.innerHTML = `
-      <div class="cat-photo-placeholder">🐈</div>
+      <div class="cat-photo-placeholder skeleton">🐈</div>
       <img alt="real cat photo" style="display:none" />
       <figcaption class="cat-photo-caption">${caption}</figcaption>
     `;
 
     const img = card.querySelector("img");
     const placeholder = card.querySelector(".cat-photo-placeholder");
-    img.src = `https://cataas.com/cat/${tag}?width=320&height=220&t=${Date.now()}${Math.random()}`;
+    img.src = `https://cataas.com/cat?width=320&height=220&${cbust()}`;
     img.onload = () => {
       placeholder.style.display = "none";
       img.style.display = "block";
     };
     img.onerror = () => {
+      placeholder.classList.remove("skeleton");
       placeholder.textContent = "😿";
     };
 
@@ -399,31 +393,32 @@
     const grid = document.createElement("div");
     grid.className = "cat-gallery-grid";
     // bro wtf am i doing
-    grid.appendChild(createCatPhotoCard("kitten", "yea", -2.5));
-    grid.appendChild(createCatPhotoCard("fluffy", "idk what to put in here", 1.8));
-    grid.appendChild(createCatPhotoCard("loaf", "idk bro", -1.2));
+    grid.appendChild(createCatPhotoCard("yea", -2.5));
+    grid.appendChild(createCatPhotoCard("idk what to put in here", 1.8));
+    grid.appendChild(createCatPhotoCard("idk bro", -1.2));
 
     wrap.appendChild(grid);
     hero.appendChild(wrap);
   }
 
-  function createFooterCat(tag, rotate) {
+  function createFooterCat(rotate) {
     const shot = document.createElement("figure");
     shot.className = "cat-footer-shot";
     shot.style.setProperty("--cat-rotate", `${rotate}deg`);
     shot.innerHTML = `
-      <div class="cat-photo-placeholder">🐾</div>
+      <div class="cat-photo-placeholder skeleton">🐾</div>
       <img alt="real cat photo" style="display:none" />
     `;
 
     const img = shot.querySelector("img");
     const placeholder = shot.querySelector(".cat-photo-placeholder");
-    img.src = `https://cataas.com/cat/${tag}?width=180&height=140&t=${Date.now()}${Math.random()}`;
+    img.src = `https://cataas.com/cat?width=180&height=140&${cbust()}`;
     img.onload = () => {
       placeholder.style.display = "none";
       img.style.display = "block";
     };
     img.onerror = () => {
+      placeholder.classList.remove("skeleton");
       placeholder.textContent = "😿";
     };
 
@@ -440,9 +435,9 @@
 
     const row = document.createElement("div");
     row.className = "cat-footer-row";
-    row.appendChild(createFooterCat("cute", -2));
-    row.appendChild(createFooterCat("sleepy", 1.5));
-    row.appendChild(createFooterCat("blep", -1));
+    row.appendChild(createFooterCat(-2));
+    row.appendChild(createFooterCat(1.5));
+    row.appendChild(createFooterCat(-1));
 
     strip.appendChild(row);
     footer.appendChild(strip);

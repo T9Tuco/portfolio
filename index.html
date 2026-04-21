@@ -40,14 +40,17 @@
                         been poking at computers since i was 12 and somehow turned it into a thing. i write code, break things (not)on purpose, and spend way too long on setups, so i can larp with them. currently making stuff for <strong>corehub</strong> and causing problems with the t9 crew.(larp maxing). oh and im from germany
                     </p>
                     <div class="social-links">
-                        <a href="https://github.com/T9Tuco" target="_blank" class="social-link">
+                        <a href="https://github.com/T9Tuco" target="_blank" class="social-link" title="github">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://discord.com/users/718832241127718915" target="_blank" class="social-link">
+                        <a href="https://discord.com/users/718832241127718915" target="_blank" class="social-link" title="discord">
                             <i class="fab fa-discord"></i>
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#f794989983969483b78382949883ced994989a" class="social-link">
+                        <a href="/cdn-cgi/l/email-protection#f794989983969483b78382949883ced994989a" class="social-link" title="email">
                             <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="social-link pgp-link" title="PGP public key">
+                            <i class="fas fa-key"></i>
                         </a>
                     </div>
                 </div>
@@ -142,7 +145,7 @@
 
                     <div class="opsec-card">
                         <div class="opsec-card-image">
-                            <img src="assets/3.png" alt="Hardened ThinkPad T480">
+                            <img src="assets/3.png" alt="Hardened ThinkPad T480" class="loading">
                             <span class="opsec-tag">hardware</span>
                         </div>
                         <div class="opsec-card-body">
@@ -153,7 +156,7 @@
 
                     <div class="opsec-card">
                         <div class="opsec-card-image">
-                            <img src="assets/4.png" alt="GL.iNet Beryl Router">
+                            <img src="assets/4.png" alt="GL.iNet Beryl Router" class="loading">
                             <span class="opsec-tag">network</span>
                         </div>
                         <div class="opsec-card-body">
@@ -164,8 +167,8 @@
 
                     <div class="opsec-card">
                         <div class="opsec-card-image opsec-card-image--double">
-                            <img src="assets/1.png" alt="T480 booting TailsOS">
-                            <img src="assets/2.png" alt="TailsOS Login Screen">
+                            <img src="assets/1.png" alt="T480 booting TailsOS" class="loading">
+                            <img src="assets/2.png" alt="TailsOS Login Screen" class="loading">
                             <span class="opsec-tag">system</span>
                         </div>
                         <div class="opsec-card-body">
@@ -211,7 +214,7 @@
                         <i class="fas fa-moon tech-icon"></i>
                         <span class="tech-name">Lua</span>
                     </div>
-                    <div class="tech-item" data-tech="archlinux" data-skill="30" data-description="i use arch btw. breaking my system with an update is my favorite hobby.">
+                    <div class="tech-item" data-tech="archlinux" data-skill="78" data-description="daily driver. arch + dwm on x11. broken it enough times to actually know what i'm doing. probably.">
                         <i class="fab fa-linux tech-icon"></i>
                         <span class="tech-name">Arch Linux</span>
                     </div>
@@ -381,12 +384,49 @@
             <p class="modal-description"></p>
             <div class="skill-level">
                 <div class="skill-label">
-                    <span>Skill Level</span>
+                    <span>skill level</span>
                     <span class="skill-percentage">0%</span>
                 </div>
                 <div class="skill-bar">
                     <div class="skill-progress"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="pgpModal">
+        <div class="modal pgp-modal">
+            <button class="modal-close" id="pgpModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-key modal-icon"></i>
+                <h3 class="modal-title">PGP Public Key</h3>
+            </div>
+            <div class="pgp-modal-body">
+                <p class="pgp-modal-desc">used to sign AUR packages — verify it's really me.</p>
+                <div class="pgp-fingerprint">
+                    <span class="pgp-fp-label">fingerprint</span>
+                    <code>DC9172C6 2C1D2C6C 635B1B25 E01AA00B 24653961</code>
+                </div>
+                <pre class="pgp-key-block" id="pgpKeyBlock">-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: Hostname:
+Version: Hockeypuck 2.2
+
+xjMEaeYPHBYJKwYBBAHaRw8BAQdA6pFPp6i+5DurZN2UZQGAr+U+0vvF6ANzeqOL
+w3g/mhnNF3R1Y290OSA8dHVjb3Q5QHR1dGEuaW8+wpAEExYKADgWIQTckXLGLB0s
+bGNbGyXgGqALJGU5YQUCaeYPHAIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAK
+CRDgGqALJGU5YfpXAPwOAfiz2yyickSZHhOStn5JPdj0O1m/eK5Dyz/E5PbMJAD/
+WwlDz2mRmXm3ePJnpo2i6GS40sGiH+TqoksMW0zL1grOOARp5g8cEgorBgEEAZdV
+AQUBAQdA5K0SObbV+3kMgBFq2RWJbRBD97o8eERyHIUmU6alzQQDAQgHwngEGBYK
+ACAWIQTckXLGLB0sbGNbGyXgGqALJGU5YQUCaeYPHAIbDAAKCRDgGqALJGU5YQWg
+AP9nuUYYFdcPlZWcRMYFhbqtEUADR09D/rdRP0meXRu5iwD/bJwYA4aB/IRlFikj
+Du3Ic+TOTzq71UM6vn2mfdxAjAw=
+=/8qQ
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+                <button class="pgp-copy-btn" id="pgpCopyBtn">
+                    <i class="fas fa-copy"></i> copy key
+                </button>
             </div>
         </div>
     </div>

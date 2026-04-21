@@ -113,6 +113,9 @@ document.addEventListener('keydown', (e) => {
 });
 
 async function fetchGitHubStats() {
+    const avatar = document.getElementById('github-avatar');
+    avatar.classList.add('loading');
+
     try {
         const userResponse = await fetch('https://api.github.com/users/T9Tuco'); //pls dont rate limit me github
         const reposResponse = await fetch('https://api.github.com/users/T9Tuco/repos');
@@ -124,7 +127,8 @@ async function fetchGitHubStats() {
         const userData = await userResponse.json();
         const reposData = await reposResponse.json();
 
-        document.getElementById('github-avatar').src = userData.avatar_url;
+        avatar.onload = () => avatar.classList.remove('loading');
+        avatar.src = userData.avatar_url;
         document.getElementById('github-name').textContent = userData.name || userData.login;
         document.getElementById('github-bio').textContent = userData.bio || '';
         document.getElementById('github-followers').textContent = userData.followers;
@@ -136,6 +140,7 @@ async function fetchGitHubStats() {
         });
         document.getElementById('github-stars').textContent = totalStars;
     } catch (error) {
+        avatar.classList.remove('loading');
         console.error('GitHub API Error:', error);
     }
 }
@@ -217,6 +222,8 @@ function renderPinnedRepos(repos, container) {
 //ty claude
 function updateContributionGraph() {
     const contributionsGraph = document.querySelector('.contribution-graph');
+    contributionsGraph.classList.add('loading');
+    contributionsGraph.onload = () => contributionsGraph.classList.remove('loading');
     contributionsGraph.src = `https://ghchart.rshah.org/d946ef/T9Tuco?${new Date().getTime()}`;
     contributionsGraph.alt = `T9Tuco's GitHub Contributions`;
 }
@@ -244,6 +251,7 @@ const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 
 document.querySelectorAll('.opsec-card-image img').forEach(img => {
+    img.addEventListener('load', () => img.classList.remove('loading'));
     img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
@@ -263,4 +271,36 @@ lightbox.addEventListener('click', e => {
 lightboxClose.addEventListener('click', closeLightbox);
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
+});
+
+// PGP modal
+const pgpModal = document.getElementById('pgpModal');
+const pgpModalClose = document.getElementById('pgpModalClose');
+const pgpCopyBtn = document.getElementById('pgpCopyBtn');
+const pgpKeyBlock = document.getElementById('pgpKeyBlock');
+
+document.querySelector('.pgp-link').addEventListener('click', e => {
+    e.preventDefault();
+    pgpModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+function closePgpModal() {
+    pgpModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+pgpModalClose.addEventListener('click', closePgpModal);
+pgpModal.addEventListener('click', e => { if (e.target === pgpModal) closePgpModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && pgpModal.classList.contains('active')) closePgpModal(); });
+
+pgpCopyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(pgpKeyBlock.textContent).then(() => {
+        pgpCopyBtn.classList.add('copied');
+        pgpCopyBtn.innerHTML = '<i class="fas fa-check"></i> copied!';
+        setTimeout(() => {
+            pgpCopyBtn.classList.remove('copied');
+            pgpCopyBtn.innerHTML = '<i class="fas fa-copy"></i> copy key';
+        }, 2000);
+    });
 });
