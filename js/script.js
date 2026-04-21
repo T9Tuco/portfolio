@@ -304,3 +304,13 @@ pgpCopyBtn.addEventListener('click', () => {
         }, 2000);
     });
 });
+
+// pink selection thing, idk what to call it
+(function setSelectionColor() {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const selectionColor = rootStyles.getPropertyValue('--pink').trim();
+
+    const style = document.createElement('style');
+    style.textContent = `::selection { background: ${selectionColor}; color: white; }`;
+    document.head.appendChild(style);
+})();

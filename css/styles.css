@@ -3,7 +3,7 @@
 /* ─── PALETTE (catppuccin mocha × pixel window) ─── */
 :root {
     --bg:         #0b0b14;
-    --bg-card:    #0d0d1a;
+    --bg-card:    #0d0d1a; 
     --bg-titlebar:#130d24;
     --text:       #cdd6f4;
     --text-dim:   #6c7086;
