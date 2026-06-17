@@ -55,7 +55,7 @@ all cat photos come from the internet in real time, which is either fun or a ter
 - `cataas` for real cat photos pulled into the site
 
 ## how to run it
-1. clone the repo
+1. clone the repo.
 2. open `index.html` in a browser
 3. look at website
 4. press `new` on the cat widget a few times if you need to verify the important systems are online
