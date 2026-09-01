@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="hi, i'm tuco. i write code and break things.">
-    <title>tuco</title>
+
+    <!-- primary seo -->
+    <title>tuco — developer, homelabber & 3d printing enjoyer</title>
+    <meta name="description" content="hi, i'm tuco. developer from germany. i build open source tools in python and c++, run a proxmox homelab, 3d print stuff and break things (not) on purpose.">
+    <meta name="author" content="tuco">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tucot9.com/">
+    <meta name="theme-color" content="#0b0b14">
+
+    <!-- open graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tucot9.com/">
+    <meta property="og:site_name" content="tuco">
+    <meta property="og:title" content="tuco — developer, homelabber & 3d printing enjoyer">
+    <meta property="og:description" content="hi, i'm tuco. developer from germany. open source tools, proxmox homelab, 3d printing, and breaking things (not) on purpose.">
+    <meta property="og:image" content="https://tucot9.com/assets/6.webp">
+    <meta property="og:image:alt" content="tuco's mini rack proxmox homelab">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="tuco — developer, homelabber & 3d printing enjoyer">
+    <meta name="twitter:description" content="hi, i'm tuco. developer from germany. open source tools, proxmox homelab, 3d printing, and breaking things (not) on purpose.">
+    <meta name="twitter:image" content="https://tucot9.com/assets/6.webp">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/styles.css?v=3">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "tuco",
+        "url": "https://tucot9.com/",
+        "nationality": "DE",
+        "description": "developer from germany. open source tools, proxmox homelab, 3d printing.",
+        "sameAs": [
+            "https://github.com/T9Tuco",
+            "https://corehub.lol"
+        ],
+        "knowsAbout": ["python", "c++", "linux", "arch linux", "self-hosting", "proxmox", "3d printing", "it security"]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -15,12 +53,12 @@
                 <a href="#" class="logo">tuco</a>
                 <div class="nav-links">
                     <a href="#about" class="nav-link">about</a>
-                    <a href="#github-stats" class="nav-link">github</a>
-                    <a href="#expertise" class="nav-link">interests</a>
-                    <a href="#vision" class="nav-link">thoughts</a>
-                    <a href="#opsec" class="nav-link">setup</a>
                     <a href="#projects" class="nav-link">projects</a>
+                    <a href="#github-stats" class="nav-link">github</a>
+                    <a href="#hobbies" class="nav-link">hobbies</a>
                     <a href="#tech-stack" class="nav-link">tech</a>
+                    <a href="#opsec" class="nav-link">setup</a>
+                    <a href="#vision" class="nav-link">thoughts</a>
                     <a href="#domains" class="nav-link">domains</a>
                 </div>
             </nav>
@@ -56,132 +94,6 @@
                 </div>
             </div>
         </section>
-
-        <section class="section" id="github-stats">
-            <div class="container">
-                <h2 class="section-title">github stats</h2>
-                <p class="ai-disclaimer" style="text-align: center; margin-bottom: 2rem; color: var(--text-dim);">
-                    some repos on here were written with ai help. the code worked until it didn't. now i write my own slop again.
-                </p>
-                <div class="github-stats-container">
-                    <div class="github-profile">
-                        <img id="github-avatar" src="" alt="GitHub Avatar" class="github-avatar">
-                        <div class="github-info">
-                            <h3 id="github-name">Loading...</h3>
-                            <p id="github-bio"></p>
-                            <div class="github-meta">
-                                <span><i class="fas fa-users"></i> <span id="github-followers">0</span> Followers</span>
-                                <span><i class="fas fa-code-branch"></i> <span id="github-repos">0</span> Repos</span>
-                                <span><i class="fas fa-star"></i> <span id="github-stars">0</span> Stars</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="github-contributions">
-                        <img src="https://ghchart.rshah.org/cba6f7/T9Tuco" alt="GitHub Contributions" class="contribution-graph">
-                    </div>
-                    <div class="github-pinned">
-                        <h4>pinned repositories</h4>
-                        <div id="pinned-repos" class="pinned-repos-grid"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="expertise">
-            <div class="container">
-                <h2 class="section-title">what i do</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>ai & ml</h3>
-                        <p>i trained a model on my own data once and it worked, which was exciting until i realized i had no idea why. mostly i build small automation tools and try to understand what's actually happening under the hood.</p>
-                    </div>
-                    <div class="card">
-                        <h3>security</h3>
-                        <p>finding a hole before someone bad does feels good. web vulns, network stuff, occasional hardware tinkering. the finding is honestly more fun than the fixing, but i do both. (im really bad at this)</p>
-                    </div>
-                    <div class="card">
-                        <h3>ctf & hacking</h3>
-                        <p>ctf is just puzzles except the puzzles are reversing a binary at 2am. decent at web and crypto, terrible at pwn, and fully in denial about it.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="vision">
-            <div class="container">
-                <h2 class="section-title">philosophy</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3><i class="fab fa-linux" style="color: var(--accent); margin-right: 0.5rem;"></i> linux</h3>
-                        <p>i run arch with (suckless) dwm. yes it took multiple reinstalls to get right. yes i still think it was worth it. my pc boots in 4 seconds (into grub) and i can name every process running on it, which feels like a superpower until something breaks at the worst possible moment.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fas fa-hand-holding-dollar" style="color: var(--accent); margin-right: 0.5rem;"></i> free software</h3>
-                        <p>if you can't read the code, you don't know what it's doing. most proprietary software isn't evil, it just doesn't care about you specifically. open source at least gives you the chance to check.</p>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fas fa-code-branch" style="color: var(--accent); margin-right: 0.5rem;"></i> self-hosting</h3>
-                        <p>i self-host what i can. because it's nice to know where your stuff actually lives. also it's a great excuse to run servers for no reason. (i use proxmox)</p>
-                    </div>
-                    <div class="card">
-                        <h3><i class="fas fa-users" style="color: var(--accent); margin-right: 0.5rem;"></i> open source</h3>
-                        <p>i just love open source, cus yes</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="opsec">
-            <div class="container">
-                <h2 class="section-title">my setup</h2>
-
-                <p class="opsec-intro">
-                    i've physically removed the camera and microphone from my main laptop, nuked the intel ME with <code>me_cleaner</code>, and own a dedicated router just for isolating test devices. is this overkill? maybe. is it interesting to figure out? absolutely.
-                    <br><br>
-                    daily driver is <strong>arch linux</strong> + <strong>dwm</strong> because i like being able to see the source code of my window manager. <strong>mullvad</strong> for vpn, <strong>vscodium</strong> because the telemetry in vscode bothers me more than it probably should.
-                </p>
-
-                <div class="opsec-grid">
-
-                    <div class="opsec-card">
-                        <div class="opsec-card-image">
-                            <img src="assets/3.png" alt="Hardened ThinkPad T480" class="loading">
-                            <span class="opsec-tag">hardware</span>
-                        </div>
-                        <div class="opsec-card-body">
-                            <h3>thinkpad t480</h3>
-                            <p>main machine for security work. camera and mic physically removed — can't exfiltrate what isn't there. intel ME nuked with <code>me_cleaner</code>. nothing running that i didn't put there.</p>
-                        </div>
-                    </div>
-
-                    <div class="opsec-card">
-                        <div class="opsec-card-image">
-                            <img src="assets/4.png" alt="GL.iNet Beryl Router" class="loading">
-                            <span class="opsec-tag">network</span>
-                        </div>
-                        <div class="opsec-card-body">
-                            <h3>gl.inet beryl</h3>
-                            <p>keeps the test machine off my actual home network. all traffic goes through vpn at the hardware level — so even if something on the laptop misbehaves, it doesn't go anywhere useful.</p>
-                        </div>
-                    </div>
-
-                    <div class="opsec-card">
-                        <div class="opsec-card-image opsec-card-image--double">
-                            <img src="assets/1.png" alt="T480 booting TailsOS" class="loading">
-                            <img src="assets/2.png" alt="TailsOS Login Screen" class="loading">
-                            <span class="opsec-tag">system</span>
-                        </div>
-                        <div class="opsec-card-body">
-                            <h3>tails os</h3>
-                            <p>boot from usb when i need a clean slate. everything goes through tor, nothing touches the disk. shut it down and it's like you were never there. i find that genuinely satisfying.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
         <section class="section" id="projects">
             <div class="container">
                 <h2 class="section-title">projects</h2>
@@ -217,7 +129,64 @@
                 </div>
             </div>
         </section>
-
+        <section class="section" id="github-stats">
+            <div class="container">
+                <h2 class="section-title">github stats</h2>
+                <p class="ai-disclaimer" style="text-align: center; margin-bottom: 2rem; color: var(--text-dim);">
+                    some repos on here were written with ai help. the code worked until it didn't. now i write my own slop again.
+                </p>
+                <div class="github-stats-container">
+                    <div class="github-profile">
+                        <img id="github-avatar" src="" alt="GitHub Avatar" class="github-avatar">
+                        <div class="github-info">
+                            <h3 id="github-name">Loading...</h3>
+                            <p id="github-bio"></p>
+                            <div class="github-meta">
+                                <span><i class="fas fa-users"></i> <span id="github-followers">0</span> Followers</span>
+                                <span><i class="fas fa-code-branch"></i> <span id="github-repos">0</span> Repos</span>
+                                <span><i class="fas fa-star"></i> <span id="github-stars">0</span> Stars</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="github-contributions">
+                        <img src="https://ghchart.rshah.org/cba6f7/T9Tuco" alt="GitHub Contributions" class="contribution-graph">
+                    </div>
+                    <div class="github-pinned">
+                        <h4>pinned repositories</h4>
+                        <div id="pinned-repos" class="pinned-repos-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="hobbies">
+            <div class="container">
+                <h2 class="section-title">my hobbies</h2>
+                <div class="opsec-grid hobby-grid">
+                    <div class="opsec-card">
+                        <div class="opsec-card-image opsec-card-image--double">
+                            <img src="assets/5.webp" alt="Bambu Lab P2S with AMS 2 in my tv cabinet" class="loading">
+                            <img src="assets/8.webp" alt="3d printed transformers logo fan cover on the print head" class="loading">
+                            <span class="opsec-tag">3d printing</span>
+                        </div>
+                        <div class="opsec-card-body">
+                            <h3>3d printing</h3>
+                            <p>bambu lab p2s + ams 2, living in my tv cabinet. i tell myself it's for useful stuff, and to be fair the rack mounts for my servers actually came off it. the other 90% is random organizers, a transformers fan cover for the printer itself, and parts for problems i created myself. no regrets.</p>
+                        </div>
+                    </div>
+                    <div class="opsec-card">
+                        <div class="opsec-card-image opsec-card-image--double">
+                            <img src="assets/6.webp" alt="Mini rack with the proxmox cluster and its status screen" class="loading">
+                            <img src="assets/7.webp" alt="3d printed rack mounts for the thinkcentres" class="loading">
+                            <span class="opsec-tag">home lab</span>
+                        </div>
+                        <div class="opsec-card-body">
+                            <h3>home labbing</h3>
+                            <p>two thinkcentre m910q's running as a proxmox cluster in a mini rack, also inside the tv cabinet. 16gb ram and a 500gb ssd per node, node 2 has an external 1tb ssd for music and backups. runs pihole, vaultwarden, jellyfin and this exact website. the little screen exists so i can watch the cluster do mostly nothing. it's beautiful.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section" id="tech-stack">
             <div class="container">
                 <h2 class="section-title">tech stack</h2>
@@ -269,45 +238,83 @@
                 </div>
             </div>
         </section>
+        <section class="section" id="opsec">
+            <div class="container">
+                <h2 class="section-title">my setup</h2>
 
+                <p class="opsec-intro">
+                    i've physically removed the camera and microphone from my main laptop, nuked the intel ME with <code>me_cleaner</code>, and own a dedicated router just for isolating test devices. is this overkill? maybe. is it interesting to figure out? absolutely.
+                    <br><br>
+                    daily driver is <strong>arch linux</strong> + <strong>dwm</strong> because i like being able to see the source code of my window manager. <strong>mullvad</strong> for vpn, <strong>vscodium</strong> because the telemetry in vscode bothers me more than it probably should.
+                </p>
+
+                <div class="opsec-grid">
+
+                    <div class="opsec-card">
+                        <div class="opsec-card-image">
+                            <img src="assets/3.png" alt="Hardened ThinkPad T480" class="loading">
+                            <span class="opsec-tag">hardware</span>
+                        </div>
+                        <div class="opsec-card-body">
+                            <h3>thinkpad t480</h3>
+                            <p>main machine for security work. camera and mic physically removed — can't exfiltrate what isn't there. intel ME nuked with <code>me_cleaner</code>. nothing running that i didn't put there.</p>
+                        </div>
+                    </div>
+
+                    <div class="opsec-card">
+                        <div class="opsec-card-image">
+                            <img src="assets/4.png" alt="GL.iNet Beryl Router" class="loading">
+                            <span class="opsec-tag">network</span>
+                        </div>
+                        <div class="opsec-card-body">
+                            <h3>gl.inet beryl</h3>
+                            <p>keeps the test machine off my actual home network. all traffic goes through vpn at the hardware level — so even if something on the laptop misbehaves, it doesn't go anywhere useful.</p>
+                        </div>
+                    </div>
+
+                    <div class="opsec-card">
+                        <div class="opsec-card-image opsec-card-image--double">
+                            <img src="assets/1.png" alt="T480 booting TailsOS" class="loading">
+                            <img src="assets/2.png" alt="TailsOS Login Screen" class="loading">
+                            <span class="opsec-tag">system</span>
+                        </div>
+                        <div class="opsec-card-body">
+                            <h3>tails os</h3>
+                            <p>boot from usb when i need a clean slate. everything goes through tor, nothing touches the disk. shut it down and it's like you were never there. i find that genuinely satisfying.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="section" id="vision">
+            <div class="container">
+                <h2 class="section-title">philosophy</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3><i class="fab fa-linux" style="color: var(--accent); margin-right: 0.5rem;"></i> linux</h3>
+                        <p>i run arch with (suckless) dwm. yes it took multiple reinstalls to get right. yes i still think it was worth it. my pc boots in 4 seconds (into grub) and i can name every process running on it, which feels like a superpower until something breaks at the worst possible moment.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-hand-holding-dollar" style="color: var(--accent); margin-right: 0.5rem;"></i> free software</h3>
+                        <p>if you can't read the code, you don't know what it's doing. most proprietary software isn't evil, it just doesn't care about you specifically. open source at least gives you the chance to check.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-code-branch" style="color: var(--accent); margin-right: 0.5rem;"></i> self-hosting</h3>
+                        <p>i self-host what i can. because it's nice to know where your stuff actually lives. also it's a great excuse to run servers for no reason. (i use proxmox)</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-users" style="color: var(--accent); margin-right: 0.5rem;"></i> open source</h3>
+                        <p>i just love open source, cus yes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section" id="domains">
             <div class="container">
                 <h2 class="section-title">my domains</h2>
                 <div class="cards-grid">
-                    <div class="card">
-                        <div class="domain-card">
-                            <div class="domain-icon">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <div class="domain-info">
-                                <h3 class="domain-name">t9.rocks (student pack)</h3>
-                                <p class="domain-description">
-                                    got this via the student pack. i lend it to the t9 crew. they trust me with their dns, which is brave.
-                                </p>
-                            </div>
-                        </div>
-                        <a href="https://t9.rocks" class="card-link" target="_blank">
-                            visit site <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="domain-card">
-                            <div class="domain-icon">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <div class="domain-info">
-                                <h3 class="domain-name">t9.software (student pack)</h3>
-                                <p class="domain-description">
-                                    also a student pack domain i lend to t9. honestly surprised they trust me not to redirect everything to a rickroll.
-                                </p>
-                            </div>
-                        </div>
-                        <a href="https://t9.software" class="card-link" target="_blank">
-                            visit site <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    
                     <div class="card">
                         <div class="domain-card">
                             <div class="domain-icon">
@@ -324,7 +331,21 @@
                             visit site <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
-                    
+
+                    <div class="card">
+                        <div class="domain-card">
+                            <div class="domain-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="domain-info">
+                                <h3 class="domain-name">tucot9.cloud</h3>
+                                <p class="domain-description">
+                                    everything homelab-related lives here. pihole, remote access to the cluster, that kind of thing. sits behind cloudflare zero trust, so good luck.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <div class="domain-card">
                             <div class="domain-icon">
